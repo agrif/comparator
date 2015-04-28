@@ -1,0 +1,9 @@
+# Xcode and MacOSX noise
+.DS_Store
+._*
+*.mode?v3
+*.pbxuser
+xcuserdata
+xcshareddata
+project.xcworkspace
+build/
