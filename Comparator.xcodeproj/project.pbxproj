@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		D023BA3E1AEF2706004B598A /* CMPDismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA3D1AEF2706004B598A /* CMPDismissSegue.m */; };
 		D023BA481AF00287004B598A /* CMPDocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA441AF00287004B598A /* CMPDocumentViewController.m */; };
-		D023BA491AF00287004B598A /* CMPFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D023BA451AF00287004B598A /* CMPFileViewController.swift */; };
 		D023BA4A1AF00287004B598A /* CMPRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA471AF00287004B598A /* CMPRootViewController.m */; };
 		D023BA4D1AF00294004B598A /* CMPSwapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA4C1AF00294004B598A /* CMPSwapViewController.m */; };
+		D023BA511AF11CAE004B598A /* CMPFileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA501AF11CAE004B598A /* CMPFileSystem.m */; };
+		D023BA541AF11F3E004B598A /* CMPLocalFileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA531AF11F3E004B598A /* CMPLocalFileSystem.m */; };
+		D023BA571AF1264C004B598A /* NSArray+HasPrefix.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA561AF1264C004B598A /* NSArray+HasPrefix.m */; };
+		D023BA5A1AF130A0004B598A /* CMPFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA591AF130A0004B598A /* CMPFileViewController.m */; };
 		D07B5DC21AEA97440075B6CC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D07B5DB91AEA97440075B6CC /* Info.plist */; };
 		D07B5DC31AEA97440075B6CC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D07B5DBA1AEA97440075B6CC /* LaunchScreen.xib */; };
 		D07B5DC41AEA97440075B6CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07B5DBB1AEA97440075B6CC /* Main.storyboard */; };
@@ -23,14 +26,20 @@
 /* Begin PBXFileReference section */
 		D023BA3C1AEF2706004B598A /* CMPDismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMPDismissSegue.h; path = Extra/CMPDismissSegue.h; sourceTree = "<group>"; };
 		D023BA3D1AEF2706004B598A /* CMPDismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMPDismissSegue.m; path = Extra/CMPDismissSegue.m; sourceTree = "<group>"; };
-		D023BA3F1AEF28DD004B598A /* Comparator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Comparator-Bridging-Header.h"; sourceTree = "<group>"; };
 		D023BA431AF00287004B598A /* CMPDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMPDocumentViewController.h; path = ViewControllers/CMPDocumentViewController.h; sourceTree = "<group>"; };
 		D023BA441AF00287004B598A /* CMPDocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMPDocumentViewController.m; path = ViewControllers/CMPDocumentViewController.m; sourceTree = "<group>"; };
-		D023BA451AF00287004B598A /* CMPFileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CMPFileViewController.swift; path = ViewControllers/CMPFileViewController.swift; sourceTree = "<group>"; };
 		D023BA461AF00287004B598A /* CMPRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMPRootViewController.h; path = ViewControllers/CMPRootViewController.h; sourceTree = "<group>"; };
 		D023BA471AF00287004B598A /* CMPRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMPRootViewController.m; path = ViewControllers/CMPRootViewController.m; sourceTree = "<group>"; };
 		D023BA4B1AF00294004B598A /* CMPSwapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMPSwapViewController.h; path = Extra/CMPSwapViewController.h; sourceTree = "<group>"; };
 		D023BA4C1AF00294004B598A /* CMPSwapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMPSwapViewController.m; path = Extra/CMPSwapViewController.m; sourceTree = "<group>"; };
+		D023BA4F1AF11CAE004B598A /* CMPFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMPFileSystem.h; path = Extra/VFS/CMPFileSystem.h; sourceTree = "<group>"; };
+		D023BA501AF11CAE004B598A /* CMPFileSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMPFileSystem.m; path = Extra/VFS/CMPFileSystem.m; sourceTree = "<group>"; };
+		D023BA521AF11F3E004B598A /* CMPLocalFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMPLocalFileSystem.h; path = Extra/VFS/CMPLocalFileSystem.h; sourceTree = "<group>"; };
+		D023BA531AF11F3E004B598A /* CMPLocalFileSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMPLocalFileSystem.m; path = Extra/VFS/CMPLocalFileSystem.m; sourceTree = "<group>"; };
+		D023BA551AF1264C004B598A /* NSArray+HasPrefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+HasPrefix.h"; path = "Extra/NSArray+HasPrefix.h"; sourceTree = "<group>"; };
+		D023BA561AF1264C004B598A /* NSArray+HasPrefix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+HasPrefix.m"; path = "Extra/NSArray+HasPrefix.m"; sourceTree = "<group>"; };
+		D023BA581AF130A0004B598A /* CMPFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMPFileViewController.h; path = ViewControllers/CMPFileViewController.h; sourceTree = "<group>"; };
+		D023BA591AF130A0004B598A /* CMPFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMPFileViewController.m; path = ViewControllers/CMPFileViewController.m; sourceTree = "<group>"; };
 		D07B5D8E1AEA95D50075B6CC /* Comparator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comparator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07B5DB91AEA97440075B6CC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D07B5DBA1AEA97440075B6CC /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -55,10 +64,13 @@
 		D023BA3B1AEF26D3004B598A /* Extra */ = {
 			isa = PBXGroup;
 			children = (
+				D023BA4E1AF11C78004B598A /* VFS */,
 				D023BA4B1AF00294004B598A /* CMPSwapViewController.h */,
 				D023BA4C1AF00294004B598A /* CMPSwapViewController.m */,
 				D023BA3C1AEF2706004B598A /* CMPDismissSegue.h */,
 				D023BA3D1AEF2706004B598A /* CMPDismissSegue.m */,
+				D023BA551AF1264C004B598A /* NSArray+HasPrefix.h */,
+				D023BA561AF1264C004B598A /* NSArray+HasPrefix.m */,
 			);
 			name = Extra;
 			sourceTree = "<group>";
@@ -68,11 +80,23 @@
 			children = (
 				D023BA431AF00287004B598A /* CMPDocumentViewController.h */,
 				D023BA441AF00287004B598A /* CMPDocumentViewController.m */,
-				D023BA451AF00287004B598A /* CMPFileViewController.swift */,
 				D023BA461AF00287004B598A /* CMPRootViewController.h */,
 				D023BA471AF00287004B598A /* CMPRootViewController.m */,
+				D023BA581AF130A0004B598A /* CMPFileViewController.h */,
+				D023BA591AF130A0004B598A /* CMPFileViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D023BA4E1AF11C78004B598A /* VFS */ = {
+			isa = PBXGroup;
+			children = (
+				D023BA4F1AF11CAE004B598A /* CMPFileSystem.h */,
+				D023BA501AF11CAE004B598A /* CMPFileSystem.m */,
+				D023BA521AF11F3E004B598A /* CMPLocalFileSystem.h */,
+				D023BA531AF11F3E004B598A /* CMPLocalFileSystem.m */,
+			);
+			name = VFS;
 			sourceTree = "<group>";
 		};
 		D07B5D851AEA95D50075B6CC = {
@@ -111,7 +135,6 @@
 				D07B5DBD1AEA97440075B6CC /* CMPAppDelegate.h */,
 				D07B5DBE1AEA97440075B6CC /* CMPAppDelegate.m */,
 				D07B5DBF1AEA97440075B6CC /* main.m */,
-				D023BA3F1AEF28DD004B598A /* Comparator-Bridging-Header.h */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -188,13 +211,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D023BA541AF11F3E004B598A /* CMPLocalFileSystem.m in Sources */,
+				D023BA5A1AF130A0004B598A /* CMPFileViewController.m in Sources */,
 				D023BA481AF00287004B598A /* CMPDocumentViewController.m in Sources */,
 				D023BA4A1AF00287004B598A /* CMPRootViewController.m in Sources */,
 				D023BA3E1AEF2706004B598A /* CMPDismissSegue.m in Sources */,
-				D023BA491AF00287004B598A /* CMPFileViewController.swift in Sources */,
 				D023BA4D1AF00294004B598A /* CMPSwapViewController.m in Sources */,
 				D07B5DC61AEA97440075B6CC /* main.m in Sources */,
 				D07B5DC51AEA97440075B6CC /* CMPAppDelegate.m in Sources */,
+				D023BA511AF11CAE004B598A /* CMPFileSystem.m in Sources */,
+				D023BA571AF1264C004B598A /* NSArray+HasPrefix.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
