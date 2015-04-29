@@ -9,32 +9,50 @@
 #import <Foundation/Foundation.h>
 
 #define CMPFileSystemErrorDomain @"net.rakeri.CMPFileSystem.ErrorDomain"
-enum CMPFileSystemErrorCode
+typedef enum
 {
     CMPFileSystemErrorNotMounted,
-};
+    CMPFileSystemErrorDoesNotExist,
+} CMPFileSystemErrorCode;
 
-typedef void (^ListBlock)(NSArray*, NSError*);
+typedef enum
+{
+    CMPFileTypeNormal,
+    CMPFileTypeFolder,
+} CMPFileType;
+
+typedef void (^CMPListBlock)(NSArray*, NSError*);
+typedef void (^CMPDataBlock)(NSData*, NSError*);
+typedef void (^CMPProgressBlock)(NSUInteger, NSUInteger);
+typedef void (^CMPErrorBlock)(NSError*);
 
 @protocol CMPFileSystem
 
-- (void) listContentsAtPath: (NSArray*) path withCompletion: (ListBlock) completion;
+- (void) listContentsAtPath: (NSArray*) path withCompletion: (CMPListBlock) completion;
+// output is left open for completion() to close, or do whatever with
+- (void) readFileAtPath: (NSArray*) path toStream: (NSOutputStream*) output withProgress: (CMPProgressBlock) progress completion: (CMPErrorBlock) completion;
 
 @end
 
-typedef void (^PerformBlock)(NSObject<CMPFileSystem>*, NSArray*, NSError*);
-
-@interface CMPMetaFileSystem : NSObject <CMPFileSystem>
+@interface CMPFile : NSObject
 {
-    NSMutableDictionary* mounts;
+    NSObject<CMPFileSystem>* fileSystem;
+    NSArray* path;
+    CMPFileType type;
 }
 
-+ (instancetype) metaFileSystem;
-- (instancetype) init;
++ (instancetype) fileForFileSystem: (NSObject<CMPFileSystem>*) fileSystem path: (NSArray*) path type: (CMPFileType) type;
+- (instancetype) initForFileSystem: (NSObject<CMPFileSystem>*) fileSystem path: (NSArray*) path type: (CMPFileType) type;
 
-- (void) mountFileSystem: (NSObject<CMPFileSystem>*) fileSystem atPath: (NSArray*) path;
-- (void) unmountPath: (NSArray*) path;
-- (void) unmountFileSystem: (NSObject<CMPFileSystem>*) fileSystem;
-- (void) performOnMountedPath: (NSArray*) path action: (PerformBlock) action;
+@property (nonatomic, readonly) NSObject<CMPFileSystem>* fileSystem;
+@property (nonatomic, readonly) NSArray* path;
+@property (nonatomic, readonly) CMPFileType type;
+
+- (void) readToStream: (NSOutputStream*) output withProgress: (CMPProgressBlock) progress completion: (CMPErrorBlock) completion;
+- (void) readDataWithProgress: (CMPProgressBlock) progress completion: (CMPDataBlock) completion;
+
+@property (nonatomic, readonly) NSString* name;
+@property (nonatomic, readonly) BOOL isFile;
+@property (nonatomic, readonly) BOOL isFolder;
 
 @end

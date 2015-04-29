@@ -12,7 +12,7 @@
 @interface CMPFileViewController : UITableViewController
 {
     NSObject<CMPFileSystem>* fs;
-    NSArray* names;
+    NSArray* files;
 }
 
 @end

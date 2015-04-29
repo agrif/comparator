@@ -15,6 +15,8 @@
 		D023BA541AF11F3E004B598A /* CMPLocalFileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA531AF11F3E004B598A /* CMPLocalFileSystem.m */; };
 		D023BA571AF1264C004B598A /* NSArray+HasPrefix.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA561AF1264C004B598A /* NSArray+HasPrefix.m */; };
 		D023BA5A1AF130A0004B598A /* CMPFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA591AF130A0004B598A /* CMPFileViewController.m */; };
+		D023BA5D1AF16695004B598A /* CMPMetaFileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA5C1AF16695004B598A /* CMPMetaFileSystem.m */; };
+		D023BA601AF173B9004B598A /* CMPStreamCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA5F1AF173B9004B598A /* CMPStreamCopy.m */; };
 		D07B5DC21AEA97440075B6CC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D07B5DB91AEA97440075B6CC /* Info.plist */; };
 		D07B5DC31AEA97440075B6CC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D07B5DBA1AEA97440075B6CC /* LaunchScreen.xib */; };
 		D07B5DC41AEA97440075B6CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07B5DBB1AEA97440075B6CC /* Main.storyboard */; };
@@ -40,6 +42,10 @@
 		D023BA561AF1264C004B598A /* NSArray+HasPrefix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+HasPrefix.m"; path = "Extra/NSArray+HasPrefix.m"; sourceTree = "<group>"; };
 		D023BA581AF130A0004B598A /* CMPFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMPFileViewController.h; path = ViewControllers/CMPFileViewController.h; sourceTree = "<group>"; };
 		D023BA591AF130A0004B598A /* CMPFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMPFileViewController.m; path = ViewControllers/CMPFileViewController.m; sourceTree = "<group>"; };
+		D023BA5B1AF16695004B598A /* CMPMetaFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMPMetaFileSystem.h; path = Extra/VFS/CMPMetaFileSystem.h; sourceTree = "<group>"; };
+		D023BA5C1AF16695004B598A /* CMPMetaFileSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMPMetaFileSystem.m; path = Extra/VFS/CMPMetaFileSystem.m; sourceTree = "<group>"; };
+		D023BA5E1AF173B9004B598A /* CMPStreamCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMPStreamCopy.h; path = Extra/VFS/CMPStreamCopy.h; sourceTree = "<group>"; };
+		D023BA5F1AF173B9004B598A /* CMPStreamCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMPStreamCopy.m; path = Extra/VFS/CMPStreamCopy.m; sourceTree = "<group>"; };
 		D07B5D8E1AEA95D50075B6CC /* Comparator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comparator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07B5DB91AEA97440075B6CC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D07B5DBA1AEA97440075B6CC /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -93,8 +99,12 @@
 			children = (
 				D023BA4F1AF11CAE004B598A /* CMPFileSystem.h */,
 				D023BA501AF11CAE004B598A /* CMPFileSystem.m */,
+				D023BA5B1AF16695004B598A /* CMPMetaFileSystem.h */,
+				D023BA5C1AF16695004B598A /* CMPMetaFileSystem.m */,
 				D023BA521AF11F3E004B598A /* CMPLocalFileSystem.h */,
 				D023BA531AF11F3E004B598A /* CMPLocalFileSystem.m */,
+				D023BA5E1AF173B9004B598A /* CMPStreamCopy.h */,
+				D023BA5F1AF173B9004B598A /* CMPStreamCopy.m */,
 			);
 			name = VFS;
 			sourceTree = "<group>";
@@ -212,12 +222,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D023BA541AF11F3E004B598A /* CMPLocalFileSystem.m in Sources */,
+				D023BA601AF173B9004B598A /* CMPStreamCopy.m in Sources */,
 				D023BA5A1AF130A0004B598A /* CMPFileViewController.m in Sources */,
 				D023BA481AF00287004B598A /* CMPDocumentViewController.m in Sources */,
 				D023BA4A1AF00287004B598A /* CMPRootViewController.m in Sources */,
 				D023BA3E1AEF2706004B598A /* CMPDismissSegue.m in Sources */,
 				D023BA4D1AF00294004B598A /* CMPSwapViewController.m in Sources */,
 				D07B5DC61AEA97440075B6CC /* main.m in Sources */,
+				D023BA5D1AF16695004B598A /* CMPMetaFileSystem.m in Sources */,
 				D07B5DC51AEA97440075B6CC /* CMPAppDelegate.m in Sources */,
 				D023BA511AF11CAE004B598A /* CMPFileSystem.m in Sources */,
 				D023BA571AF1264C004B598A /* NSArray+HasPrefix.m in Sources */,

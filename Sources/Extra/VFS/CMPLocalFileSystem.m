@@ -7,6 +7,7 @@
 //
 
 #import "CMPLocalFileSystem.h"
+#import "CMPStreamCopy.h"
 
 @implementation CMPLocalFileSystem
 
@@ -44,19 +45,72 @@
         root = nil;
 }
 
-- (void) listContentsAtPath: (NSArray*) path withCompletion: (ListBlock) completion
+- (NSString*) actualPathFromPath: (NSArray*) path
+{
+    NSMutableArray* fullPathComponents = [path mutableCopy];
+    [fullPathComponents insertObject: root atIndex: 0];
+    return [NSString pathWithComponents: fullPathComponents];
+}
+
+- (CMPFile*) fileForPath: (NSArray*) path
+{
+    BOOL isDirectory = NO;
+    BOOL exists = [fm fileExistsAtPath: [self actualPathFromPath: path] isDirectory: &isDirectory];
+    if (!exists)
+        return nil;
+    return [CMPFile fileForFileSystem: self path: path type: isDirectory ? CMPFileTypeFolder : CMPFileTypeNormal];
+}
+
+- (void) listContentsAtPath: (NSArray*) path withCompletion: (CMPListBlock) completion
 {
     NSError* err = nil;
-    NSMutableArray* fullPathComponents = [path mutableCopy];
-    [fullPathComponents insertObject: root atIndex:0];
-    
-    NSString* fullPath = [NSString pathWithComponents: fullPathComponents];
-    NSArray* list = [fm contentsOfDirectoryAtPath: fullPath error: &err];
+    NSArray* list = [fm contentsOfDirectoryAtPath: [self actualPathFromPath: path] error: &err];
     
     if (err)
+    {
         completion(nil, err);
-    else
-        completion(list, nil);
+        return;
+    }
+    
+    NSMutableArray* items = [[NSMutableArray alloc] initWithCapacity: [list count]];
+    for (NSString* leaf in list)
+    {
+        NSMutableArray* leafpath = [path mutableCopy];
+        [leafpath addObject: leaf];
+        CMPFile* file = [self fileForPath: leafpath];
+        
+        if (file)
+            [items addObject: file];
+    }
+    
+    completion(items, err);
+}
+
+- (void) readFileAtPath: (NSArray*) path toStream: (NSOutputStream*) output withProgress: (CMPProgressBlock) progress completion: (CMPErrorBlock) completion
+{
+    NSLog(@"reading file at %@\n", path);
+    NSString* actualPath = [self actualPathFromPath: path];
+    NSError* err = nil;
+    NSDictionary* attr = [fm attributesOfItemAtPath: actualPath error: &err];
+    
+    if (err)
+    {
+        completion(err);
+        return;
+    }
+    
+    NSNumber* totalo = [attr objectForKey: NSFileSize];
+    NSUInteger total = [totalo unsignedIntegerValue];
+
+    NSInputStream* input = [NSInputStream inputStreamWithFileAtPath: actualPath];
+    if (!input)
+    {
+        NSError* err = [NSError errorWithDomain: CMPFileSystemErrorDomain code: CMPFileSystemErrorDoesNotExist userInfo: @{NSLocalizedDescriptionKey : [NSString stringWithFormat: @"path does not exist: %@", path]}];
+        completion(err);
+        return;
+    }
+    
+    CMPStreamCopy* cp = [CMPStreamCopy streamCopyFrom: input to: output withProgress: ^(NSUInteger x) { progress(x, total); } completion: ^(NSError* err) { completion(err); [input close]; }];
 }
 
 @end

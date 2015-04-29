@@ -7,85 +7,70 @@
 //
 
 #import "CMPFileSystem.h"
-#import "NSArray+HasPrefix.h"
 
-@implementation CMPMetaFileSystem
+@implementation CMPFile
 
-+ (instancetype) metaFileSystem
+@synthesize fileSystem, path, type;
+
++ (instancetype) fileForFileSystem: (NSObject<CMPFileSystem>*) fileSystem path: (NSArray*) path type: (CMPFileType) type
 {
-    return [[CMPMetaFileSystem alloc] init];
+    return [[CMPFile alloc] initForFileSystem: fileSystem path: path type: type];
 }
 
-- (instancetype) init
+- (instancetype) initForFileSystem: (NSObject<CMPFileSystem>*) fs path: (NSArray*) p type: (CMPFileType) t
 {
     self = [super init];
     if (self)
     {
-        mounts = [[NSDictionary alloc] init];
+        fileSystem = fs;
+        path = p;
+        type = t;
     }
     return self;
 }
 
 - (void) dealloc
 {
-    if (mounts)
-        mounts = nil;
+    fileSystem = nil;
+    path = nil;
 }
 
-- (void) mountFileSystem: (NSObject<CMPFileSystem>*) fileSystem atPath: (NSArray*) path
+- (void) readToStream: (NSOutputStream*) output withProgress: (CMPProgressBlock) progress completion: (CMPErrorBlock) completion
 {
-    [mounts setObject: fileSystem forKey: path];
+    [fileSystem readFileAtPath: path toStream: output withProgress: progress completion: completion];
 }
 
-- (void) unmountPath: (NSArray*) path
+- (void) readDataWithProgress: (CMPProgressBlock) progress completion: (CMPDataBlock) completion
 {
-    [mounts removeObjectForKey: path];
-}
-
-- (void) unmountFileSystem: (NSObject<CMPFileSystem>*) fileSystem
-{
-    NSSet* paths = [mounts keysOfEntriesPassingTest: ^(id key, id object, BOOL* stop)
+    NSOutputStream* output = [NSOutputStream outputStreamToMemory];
+    [self readToStream: output withProgress: progress completion: ^(NSError* err)
     {
-        return (BOOL)(object == fileSystem);
-    }];
-    for (NSArray* path in paths)
-    {
-        [self unmountPath: path];
-    }
-}
-
-- (void) performOnMountedPath: (NSArray*) path action: (PerformBlock) action
-{
-    NSArray* mountPath = nil;
-    for (NSArray* testPath in mounts)
-    {
-        if ([path hasPrefix: testPath])
+        if (err)
         {
-            if (mountPath == nil || [mountPath count] < [testPath count])
-            {
-                mountPath = testPath;
-            }
+            completion(nil, err);
+            return;
         }
-    }
-    
-    if (mountPath)
-    {
-        NSArray* subPath = [path objectsAtIndexes: [NSIndexSet indexSetWithIndexesInRange: NSMakeRange([mountPath count], [path count] - [mountPath count])]];
-        action([mounts objectForKey: mountPath], subPath, nil);
-    } else {
-        action(nil, nil, [NSError errorWithDomain: CMPFileSystemErrorDomain code: CMPFileSystemErrorNotMounted userInfo:@{NSLocalizedDescriptionKey : [NSString stringWithFormat: @"Nothing mounted at %@.", path]}]);
-    }
+        
+        completion([output propertyForKey: NSStreamDataWrittenToMemoryStreamKey], nil);
+        [output close];
+    }];
 }
 
-- (void) listContentsAtPath: (NSArray*) path withCompletion: (ListBlock) completion
+- (NSString*) name
 {
-    [self performOnMountedPath: path action: ^(NSObject<CMPFileSystem>* fs, NSArray* subpath, NSError* error)
-    {
-        if (error)
-            completion(nil, error);
-        else
-            [fs listContentsAtPath: subpath withCompletion: completion];
-    }];
+    if ([path count])
+        return [path objectAtIndex: [path count] - 1];
+    return @"/";
+}
+
+- (BOOL) isFile
+{
+    return (BOOL)(type == CMPFileTypeNormal);
+}
+
+- (BOOL) isFolder
+{
+    return (BOOL)(type == CMPFileTypeFolder);
 }
 
 @end

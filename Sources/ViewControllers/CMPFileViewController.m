@@ -23,13 +23,13 @@
     
     NSLog(@"documents directory at %@\n", documentsDirectory);
     fs = [CMPLocalFileSystem localFileSystemAtPath: documentsDirectory];
-    names = nil;
+    files = nil;
 }
 
 - (void) viewDidUnload
 {
     fs = nil;
-    names = nil;
+    files = nil;
 }
 
 - (void) viewWillAppear: (BOOL) animated
@@ -39,8 +39,10 @@
         if (contents)
         {
             NSLog(@"found contents %@\n", contents);
-            names = contents;
+            files = contents;
             [self.tableView reloadSections: [NSIndexSet indexSetWithIndex: 0] withRowAnimation: UITableViewRowAnimationAutomatic];
+        } else {
+            NSLog(@"error listing contents: %@\n", err);
         }
     }];
 }
@@ -56,7 +58,7 @@
 - (NSInteger) numberOfSectionsInTableView: (UITableView*) tableView
 {
     // Return the number of sections.
-    if (names)
+    if (files)
         return 1;
     return 0;
 }
@@ -64,8 +66,8 @@
 - (NSInteger) tableView: (UITableView*) tableView numberOfRowsInSection: (NSInteger) section
 {
     // Return the number of rows in the section.
-    if (names)
-        return [names count];
+    if (files)
+        return [files count];
     return 0;
 }
 
@@ -74,9 +76,23 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"CMPFileViewEntry" forIndexPath: indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = [names objectAtIndex: [indexPath indexAtPosition: 1]];
-    
+    CMPFile* f = [files objectAtIndex: [indexPath indexAtPosition: 1]];
+    cell.textLabel.text = f.name;
+
     return cell;
+}
+
+- (void) tableView: (UITableView*) tableView didSelectRowAtIndexPath: (NSIndexPath*) indexPath
+{
+    CMPFile* f = [files objectAtIndex: [indexPath indexAtPosition: 1]];
+    NSLog(@"selected %@\n", f);
+    [f readDataWithProgress: ^(NSUInteger x, NSUInteger t) {} completion: ^(NSData* dat, NSError* err)
+    {
+        if (err)
+            NSLog(@"error reading %@: %@\n", f, err);
+        else
+            NSLog(@"data for %@: %@\n", f, dat);
+    }];
 }
 
 
