@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CMPFileViewController.h"
 
-@interface CMPDocumentViewController : UIViewController
+@interface CMPDocumentViewController : UIViewController <CMPFileViewControllerDelegate>
 {
     UIWebView* webView;
 }

@@ -7,9 +7,18 @@
 //
 
 #import "CMPFileViewController.h"
-#import "CMPLocalFileSystem.h"
 
 @implementation CMPFileViewController
+
+@synthesize delegate, fileSystem, path;
+
+- (void) dealloc
+{
+    delegate = nil;
+    fileSystem = nil;
+    path = nil;
+    files = nil;
+}
 
 - (void) viewDidLoad
 {
@@ -17,28 +26,21 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString* documentsDirectory = [paths objectAtIndex: 0];
-    
-    NSLog(@"documents directory at %@\n", documentsDirectory);
-    fs = [CMPLocalFileSystem localFileSystemAtPath: documentsDirectory];
     files = nil;
 }
 
 - (void) viewDidUnload
 {
-    fs = nil;
+    [super viewDidUnload];
     files = nil;
 }
 
 - (void) viewWillAppear: (BOOL) animated
 {
-    [fs listContentsAtPath: @[] withCompletion: ^(NSArray* contents, NSError* err)
+    [fileSystem listContentsAtPath: path withCompletion: ^(NSArray* contents, NSError* err)
     {
         if (contents)
         {
-            NSLog(@"found contents %@\n", contents);
             files = contents;
             [self.tableView reloadSections: [NSIndexSet indexSetWithIndex: 0] withRowAnimation: UITableViewRowAnimationAutomatic];
         } else {
@@ -85,14 +87,9 @@
 - (void) tableView: (UITableView*) tableView didSelectRowAtIndexPath: (NSIndexPath*) indexPath
 {
     CMPFile* f = [files objectAtIndex: [indexPath indexAtPosition: 1]];
-    NSLog(@"selected %@\n", f);
-    [f readDataWithProgress: ^(NSUInteger x, NSUInteger t) {} completion: ^(NSData* dat, NSError* err)
-    {
-        if (err)
-            NSLog(@"error reading %@: %@\n", f, err);
-        else
-            NSLog(@"data for %@: %@\n", f, dat);
-    }];
+    if (delegate)
+        [delegate fileViewController: self didSelectFile: f];
+    [self.tableView deselectRowAtIndexPath: indexPath animated: YES];
 }
 
 

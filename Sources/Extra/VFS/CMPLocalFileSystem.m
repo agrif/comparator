@@ -88,7 +88,6 @@
 
 - (void) readFileAtPath: (NSArray*) path toStream: (NSOutputStream*) output withProgress: (CMPProgressBlock) progress completion: (CMPErrorBlock) completion
 {
-    NSLog(@"reading file at %@\n", path);
     NSString* actualPath = [self actualPathFromPath: path];
     NSError* err = nil;
     NSDictionary* attr = [fm attributesOfItemAtPath: actualPath error: &err];

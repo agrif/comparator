@@ -46,7 +46,7 @@
                     <navigationItem key="navigationItem" title="Document" id="i1W-pN-JdZ">
                         <barButtonItem key="leftBarButtonItem" title="Open" id="77m-eE-c1E">
                             <connections>
-                                <segue destination="rWm-YO-4mm" kind="presentation" id="WVl-yl-OtN"/>
+                                <segue destination="rWm-YO-4mm" kind="presentation" identifier="Open" id="WVl-yl-OtN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
