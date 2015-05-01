@@ -7,3 +7,8 @@ xcuserdata
 xcshareddata
 project.xcworkspace
 build/
+
+# cocoapods
+/Pods
+/Podfile.lock
+
