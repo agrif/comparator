@@ -7,8 +7,6 @@
 //  See COPYING or https://www.apache.org/licenses/LICENSE-2.0
 //
 
-#import <Foundation/Foundation.h>
-
 #define CMPFileSystemErrorDomain @"net.rakeri.CMPFileSystem.ErrorDomain"
 typedef enum
 {

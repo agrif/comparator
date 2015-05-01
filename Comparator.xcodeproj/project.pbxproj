@@ -46,6 +46,7 @@
 		D023BA5C1AF16695004B598A /* CMPMetaFileSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMPMetaFileSystem.m; path = Extra/VFS/CMPMetaFileSystem.m; sourceTree = "<group>"; };
 		D023BA5E1AF173B9004B598A /* CMPStreamCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMPStreamCopy.h; path = Extra/VFS/CMPStreamCopy.h; sourceTree = "<group>"; };
 		D023BA5F1AF173B9004B598A /* CMPStreamCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMPStreamCopy.m; path = Extra/VFS/CMPStreamCopy.m; sourceTree = "<group>"; };
+		D02CC0F31AF2F8D100F7A4A6 /* prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prefix.pch; sourceTree = "<group>"; };
 		D07B5D8E1AEA95D50075B6CC /* Comparator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comparator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07B5DB91AEA97440075B6CC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D07B5DBA1AEA97440075B6CC /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -144,6 +145,7 @@
 				D023BA3B1AEF26D3004B598A /* Extra */,
 				D07B5DBD1AEA97440075B6CC /* CMPAppDelegate.h */,
 				D07B5DBE1AEA97440075B6CC /* CMPAppDelegate.m */,
+				D02CC0F31AF2F8D100F7A4A6 /* prefix.pch */,
 				D07B5DBF1AEA97440075B6CC /* main.m */,
 			);
 			path = Sources;
@@ -262,6 +264,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = Sources/prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -303,6 +306,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREFIX_HEADER = Sources/prefix.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

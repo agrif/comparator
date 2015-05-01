@@ -7,7 +7,6 @@
 //  See COPYING or https://www.apache.org/licenses/LICENSE-2.0
 //
 
-#import <Foundation/Foundation.h>
 #import "CMPFileSystem.h"
 
 @interface CMPLocalFileSystem : NSObject <CMPFileSystem>
