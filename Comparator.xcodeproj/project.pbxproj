@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA085140548877DEDD304951 /* Pods_Comparator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD9CEA3A2E446579870B59A /* Pods_Comparator.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D023BA3E1AEF2706004B598A /* CMPDismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA3D1AEF2706004B598A /* CMPDismissSegue.m */; };
 		D023BA481AF00287004B598A /* CMPDocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA441AF00287004B598A /* CMPDocumentViewController.m */; };
 		D023BA4A1AF00287004B598A /* CMPRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA471AF00287004B598A /* CMPRootViewController.m */; };
@@ -30,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B17ECEF9DFDE115017C8768 /* Pods-Comparator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comparator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Comparator/Pods-Comparator.debug.xcconfig"; sourceTree = "<group>"; };
+		7FD9CEA3A2E446579870B59A /* Pods_Comparator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comparator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8097CBE6893614B386D97E37 /* Pods-Comparator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comparator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Comparator/Pods-Comparator.release.xcconfig"; sourceTree = "<group>"; };
 		D023BA3C1AEF2706004B598A /* CMPDismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMPDismissSegue.h; path = Extra/CMPDismissSegue.h; sourceTree = "<group>"; };
 		D023BA3D1AEF2706004B598A /* CMPDismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMPDismissSegue.m; path = Extra/CMPDismissSegue.m; sourceTree = "<group>"; };
 		D023BA431AF00287004B598A /* CMPDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMPDocumentViewController.h; path = ViewControllers/CMPDocumentViewController.h; sourceTree = "<group>"; };
@@ -72,12 +76,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA085140548877DEDD304951 /* Pods_Comparator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C7AD03D175BF8712CD34054 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B17ECEF9DFDE115017C8768 /* Pods-Comparator.debug.xcconfig */,
+				8097CBE6893614B386D97E37 /* Pods-Comparator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D023BA3B1AEF26D3004B598A /* Extra */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +153,8 @@
 				D07B5DB81AEA97440075B6CC /* Resources */,
 				D07B5DBC1AEA97440075B6CC /* Sources */,
 				D07B5D8F1AEA95D50075B6CC /* Products */,
+				6C7AD03D175BF8712CD34054 /* Pods */,
+				E9E97A2B7474406075A1BFBB /* Frameworks */,
 				D02CC0F41AF2FB0000F7A4A6 /* COPYING */,
 			);
 			sourceTree = "<group>";
@@ -176,6 +192,14 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		E9E97A2B7474406075A1BFBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7FD9CEA3A2E446579870B59A /* Pods_Comparator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,9 +207,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D07B5DB11AEA95D50075B6CC /* Build configuration list for PBXNativeTarget "Comparator" */;
 			buildPhases = (
+				9F7696F890C38767FFA4DC69 /* Check Pods Manifest.lock */,
 				D07B5D8A1AEA95D50075B6CC /* Sources */,
 				D07B5D8B1AEA95D50075B6CC /* Frameworks */,
 				D07B5D8C1AEA95D50075B6CC /* Resources */,
+				C2747A398034C696A6FF497B /* Embed Pods Frameworks */,
+				53677B416DF33B609770E818 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,6 +271,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		53677B416DF33B609770E818 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Comparator/Pods-Comparator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F7696F890C38767FFA4DC69 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C2747A398034C696A6FF497B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Comparator/Pods-Comparator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D07B5D8A1AEA95D50075B6CC /* Sources */ = {
@@ -352,6 +427,7 @@
 		};
 		D07B5DB21AEA95D50075B6CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B17ECEF9DFDE115017C8768 /* Pods-Comparator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -367,6 +443,7 @@
 		};
 		D07B5DB31AEA95D50075B6CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8097CBE6893614B386D97E37 /* Pods-Comparator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

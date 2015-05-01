@@ -12,8 +12,10 @@
 @interface CMPDocumentViewController : UIViewController <CMPFileViewControllerDelegate>
 {
     UIWebView* webView;
+    CMPFile* file;
 }
 
+@property (nonatomic, retain) CMPFile* file;
 @property (nonatomic, retain) IBOutlet UIWebView* webView;
 
 @end
