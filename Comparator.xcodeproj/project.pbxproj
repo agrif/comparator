@@ -17,6 +17,10 @@
 		D023BA5A1AF130A0004B598A /* CMPFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA591AF130A0004B598A /* CMPFileViewController.m */; };
 		D023BA5D1AF16695004B598A /* CMPMetaFileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA5C1AF16695004B598A /* CMPMetaFileSystem.m */; };
 		D023BA601AF173B9004B598A /* CMPStreamCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA5F1AF173B9004B598A /* CMPStreamCopy.m */; };
+		D02CC0F51AF2FB0000F7A4A6 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = D02CC0F41AF2FB0000F7A4A6 /* COPYING */; };
+		D02CC0FB1AF2FC0300F7A4A6 /* CMPInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D02CC0F81AF2FC0300F7A4A6 /* CMPInfoTableView.m */; };
+		D02CC0FC1AF2FC0300F7A4A6 /* CMPInsetLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D02CC0FA1AF2FC0300F7A4A6 /* CMPInsetLabel.m */; };
+		D02CC0FE1AF2FDB200F7A4A6 /* About.xml in Resources */ = {isa = PBXBuildFile; fileRef = D02CC0FD1AF2FDB200F7A4A6 /* About.xml */; };
 		D07B5DC21AEA97440075B6CC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D07B5DB91AEA97440075B6CC /* Info.plist */; };
 		D07B5DC31AEA97440075B6CC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D07B5DBA1AEA97440075B6CC /* LaunchScreen.xib */; };
 		D07B5DC41AEA97440075B6CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07B5DBB1AEA97440075B6CC /* Main.storyboard */; };
@@ -47,6 +51,12 @@
 		D023BA5E1AF173B9004B598A /* CMPStreamCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMPStreamCopy.h; path = Extra/VFS/CMPStreamCopy.h; sourceTree = "<group>"; };
 		D023BA5F1AF173B9004B598A /* CMPStreamCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMPStreamCopy.m; path = Extra/VFS/CMPStreamCopy.m; sourceTree = "<group>"; };
 		D02CC0F31AF2F8D100F7A4A6 /* prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prefix.pch; sourceTree = "<group>"; };
+		D02CC0F41AF2FB0000F7A4A6 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		D02CC0F71AF2FC0300F7A4A6 /* CMPInfoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPInfoTableView.h; sourceTree = "<group>"; };
+		D02CC0F81AF2FC0300F7A4A6 /* CMPInfoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPInfoTableView.m; sourceTree = "<group>"; };
+		D02CC0F91AF2FC0300F7A4A6 /* CMPInsetLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPInsetLabel.h; sourceTree = "<group>"; };
+		D02CC0FA1AF2FC0300F7A4A6 /* CMPInsetLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPInsetLabel.m; sourceTree = "<group>"; };
+		D02CC0FD1AF2FDB200F7A4A6 /* About.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = About.xml; sourceTree = "<group>"; };
 		D07B5D8E1AEA95D50075B6CC /* Comparator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comparator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07B5DB91AEA97440075B6CC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D07B5DBA1AEA97440075B6CC /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -71,6 +81,7 @@
 		D023BA3B1AEF26D3004B598A /* Extra */ = {
 			isa = PBXGroup;
 			children = (
+				D02CC0F61AF2FC0300F7A4A6 /* InfoTableView */,
 				D023BA4E1AF11C78004B598A /* VFS */,
 				D023BA4B1AF00294004B598A /* CMPSwapViewController.h */,
 				D023BA4C1AF00294004B598A /* CMPSwapViewController.m */,
@@ -110,12 +121,25 @@
 			name = VFS;
 			sourceTree = "<group>";
 		};
+		D02CC0F61AF2FC0300F7A4A6 /* InfoTableView */ = {
+			isa = PBXGroup;
+			children = (
+				D02CC0F71AF2FC0300F7A4A6 /* CMPInfoTableView.h */,
+				D02CC0F81AF2FC0300F7A4A6 /* CMPInfoTableView.m */,
+				D02CC0F91AF2FC0300F7A4A6 /* CMPInsetLabel.h */,
+				D02CC0FA1AF2FC0300F7A4A6 /* CMPInsetLabel.m */,
+			);
+			name = InfoTableView;
+			path = Extra/InfoTableView;
+			sourceTree = "<group>";
+		};
 		D07B5D851AEA95D50075B6CC = {
 			isa = PBXGroup;
 			children = (
 				D07B5DB81AEA97440075B6CC /* Resources */,
 				D07B5DBC1AEA97440075B6CC /* Sources */,
 				D07B5D8F1AEA95D50075B6CC /* Products */,
+				D02CC0F41AF2FB0000F7A4A6 /* COPYING */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +154,7 @@
 		D07B5DB81AEA97440075B6CC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D02CC0FD1AF2FDB200F7A4A6 /* About.xml */,
 				D07B5DB91AEA97440075B6CC /* Info.plist */,
 				D07B5DBA1AEA97440075B6CC /* LaunchScreen.xib */,
 				D07B5DBB1AEA97440075B6CC /* Main.storyboard */,
@@ -212,6 +237,8 @@
 				D07B5DC41AEA97440075B6CC /* Main.storyboard in Resources */,
 				D07B5DCC1AEE83920075B6CC /* Document.storyboard in Resources */,
 				D07B5DC31AEA97440075B6CC /* LaunchScreen.xib in Resources */,
+				D02CC0FE1AF2FDB200F7A4A6 /* About.xml in Resources */,
+				D02CC0F51AF2FB0000F7A4A6 /* COPYING in Resources */,
 				D07B5DC21AEA97440075B6CC /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,8 +260,10 @@
 				D07B5DC61AEA97440075B6CC /* main.m in Sources */,
 				D023BA5D1AF16695004B598A /* CMPMetaFileSystem.m in Sources */,
 				D07B5DC51AEA97440075B6CC /* CMPAppDelegate.m in Sources */,
+				D02CC0FB1AF2FC0300F7A4A6 /* CMPInfoTableView.m in Sources */,
 				D023BA511AF11CAE004B598A /* CMPFileSystem.m in Sources */,
 				D023BA571AF1264C004B598A /* NSArray+HasPrefix.m in Sources */,
+				D02CC0FC1AF2FC0300F7A4A6 /* CMPInsetLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

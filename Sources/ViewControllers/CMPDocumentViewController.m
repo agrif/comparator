@@ -8,6 +8,7 @@
 //
 
 #import "CMPDocumentViewController.h"
+#import "CMPInfoTableView.h"
 #import "CMPLocalFileSystem.h"
 
 @implementation CMPDocumentViewController
@@ -27,6 +28,11 @@
         fvc.delegate = self;
         fvc.fileSystem = [CMPLocalFileSystem localFileSystemAtPath: documentsDirectory];
         fvc.path = @[];
+    } else if ([segue.identifier isEqualToString: @"About"]) {
+        UINavigationController* nav = [segue destinationViewController];
+        UITableViewController* cont = [nav.viewControllers objectAtIndex: 0];
+        CMPInfoTableView* info = cont.tableView;
+        [info loadContentsOfURL: [[NSBundle mainBundle] URLForResource: @"About" withExtension: @"xml"]];
     }
 }
 

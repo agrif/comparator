@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Root Navigation Controller-->
         <scene sceneID="0OY-4M-Zqz">
             <objects>
-                <navigationController id="p6c-Pk-R2U" sceneMemberID="viewController">
+                <navigationController title="Root Navigation Controller" id="p6c-Pk-R2U" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hxI-hO-PZ7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -49,6 +49,11 @@
                                 <segue destination="rWm-YO-4mm" kind="presentation" identifier="Open" id="WVl-yl-OtN"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="About" style="plain" id="6mS-ge-5Ad">
+                            <connections>
+                                <segue destination="hWB-Lh-LCa" kind="presentation" identifier="About" id="VJu-Au-atN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="webView" destination="y7u-0u-IdM" id="6pU-Hx-GNH"/>
@@ -58,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="194" y="422"/>
         </scene>
-        <!--Root View Controller-->
+        <!--File View Controller-->
         <scene sceneID="Ox7-IT-ISp">
             <objects>
-                <tableViewController id="mLC-OF-cLY" customClass="CMPFileViewController" sceneMemberID="viewController">
+                <tableViewController title="File View Controller" id="mLC-OF-cLY" customClass="CMPFileViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CBY-hZ-c0E">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,7 +84,7 @@
                             <outlet property="delegate" destination="mLC-OF-cLY" id="aoh-w1-PF7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="sLp-vy-3Nq">
+                    <navigationItem key="navigationItem" title="Open Document" id="sLp-vy-3Nq">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="4wb-vm-CWa">
                             <connections>
                                 <segue destination="ygZ-Mk-HTV" kind="custom" customClass="CMPDismissSegue" id="K7l-hu-gZe"/>
@@ -89,12 +94,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6LF-nU-VMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1726" y="-278"/>
+            <point key="canvasLocation" x="1008" y="-270"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--File Navigation Controller-->
         <scene sceneID="4dg-Ng-agJ">
             <objects>
-                <navigationController modalPresentationStyle="formSheet" id="rWm-YO-4mm" sceneMemberID="viewController">
+                <navigationController title="File Navigation Controller" modalPresentationStyle="formSheet" id="rWm-YO-4mm" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kf6-qp-JDp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -105,10 +110,51 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBv-sz-GZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="990" y="422"/>
+            <point key="canvasLocation" x="194" y="-270"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="MYa-yD-G7G">
+            <objects>
+                <tableViewController title="About View Controller" id="3P8-2f-wpN" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rPh-BH-xZc" customClass="CMPInfoTableView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="3P8-2f-wpN" id="Sjh-pI-8XA"/>
+                            <outlet property="delegate" destination="3P8-2f-wpN" id="y02-um-B3Y"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="About" id="Azt-dn-FMU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Ecz-WP-uT1">
+                            <connections>
+                                <segue destination="ygZ-Mk-HTV" kind="custom" customClass="CMPDismissSegue" id="X7G-Bb-hOO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lkd-8s-nIQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008" y="1188"/>
+        </scene>
+        <!--About Navigation Controller-->
+        <scene sceneID="gp9-2Z-oik">
+            <objects>
+                <navigationController title="About Navigation Controller" modalPresentationStyle="formSheet" id="hWB-Lh-LCa" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2fA-LC-NQO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3P8-2f-wpN" kind="relationship" relationship="rootViewController" id="3OA-ej-CWX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ozf-zR-E6j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="188" y="1188"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="K7l-hu-gZe"/>
+        <segue reference="X7G-Bb-hOO"/>
     </inferredMetricsTieBreakers>
 </document>
