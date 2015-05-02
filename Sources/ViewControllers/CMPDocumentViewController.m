@@ -76,8 +76,11 @@
     file = newFile;
     [file readDataWithProgress: ^(NSUInteger x, NSUInteger max)
     {
-        // FIXME cancellation if file != newFile
+        // cancel if the file has switched
+        if (file != newFile)
+            return NO;
         hud.progress = (float)(x) / max;
+        return YES;
     } completion: ^(NSData* dat, NSError* err)
     {
         if (dat)

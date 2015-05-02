@@ -66,6 +66,8 @@
     if (eventCode == NSStreamEventErrorOccurred)
     {
         doComplete(aStream.streamError);
+        [i removeFromRunLoop: [NSRunLoop mainRunLoop] forMode: NSRunLoopCommonModes];
+        [o removeFromRunLoop: [NSRunLoop mainRunLoop] forMode: NSRunLoopCommonModes];
         return;
     }
     
@@ -83,7 +85,14 @@
     {
         written += bufOffs;
         bufOffs = 0;
-        doProgress(written);
+        BOOL shouldContinue = doProgress(written);
+        if (!shouldContinue)
+        {
+            doComplete([NSError errorWithDomain: CMPFileSystemErrorDomain code: CMPFileSystemErrorCancelled userInfo: @{NSLocalizedDescriptionKey : @"operation cancelled"}]);
+            [i removeFromRunLoop: [NSRunLoop mainRunLoop] forMode: NSRunLoopCommonModes];
+            [o removeFromRunLoop: [NSRunLoop mainRunLoop] forMode: NSRunLoopCommonModes];
+            return;
+        }
     }
     
     if (bufLen == 0 && i.streamStatus == NSStreamStatusAtEnd)

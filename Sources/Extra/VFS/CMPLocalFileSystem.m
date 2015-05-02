@@ -110,7 +110,7 @@
         return;
     }
     
-    CMPStreamCopy* cp = [CMPStreamCopy streamCopyFrom: input to: output withProgress: ^(NSUInteger x) { progress(x, total); } completion: ^(NSError* err) { completion(err); [input close]; }];
+    [CMPStreamCopy streamCopyFrom: input to: output withProgress: ^(NSUInteger x) { return progress(x, total); } completion: ^(NSError* err) { completion(err); [input close]; }];
 }
 
 @end

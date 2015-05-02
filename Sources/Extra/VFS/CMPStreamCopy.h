@@ -9,7 +9,8 @@
 
 #import "CMPFileSystem.h"
 
-typedef void (^CMPSimpleProgressBlock)(NSUInteger);
+// same continuation semantics as CMPProgressBlock
+typedef BOOL (^CMPSimpleProgressBlock)(NSUInteger);
 
 @interface CMPStreamCopy : NSObject <NSStreamDelegate>
 {

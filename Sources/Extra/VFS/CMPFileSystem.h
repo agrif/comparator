@@ -12,6 +12,7 @@ typedef enum
 {
     CMPFileSystemErrorNotMounted,
     CMPFileSystemErrorDoesNotExist,
+    CMPFileSystemErrorCancelled,
 } CMPFileSystemErrorCode;
 
 typedef enum
@@ -21,8 +22,13 @@ typedef enum
 } CMPFileType;
 
 typedef void (^CMPListBlock)(NSArray*, NSError*);
+
 typedef void (^CMPDataBlock)(NSData*, NSError*);
-typedef void (^CMPProgressBlock)(NSUInteger, NSUInteger);
+
+// return YES to continue, NO to cancel
+// canceled ops get error in completion call
+typedef BOOL (^CMPProgressBlock)(NSUInteger, NSUInteger);
+
 typedef void (^CMPErrorBlock)(NSError*);
 
 @protocol CMPFileSystem
