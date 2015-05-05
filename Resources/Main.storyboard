@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JGI-a2-PMh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oDR-VL-3El">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -18,10 +18,82 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="About" id="TuS-t9-uNR">
+                            <connections>
+                                <segue destination="9eF-lL-0bJ" kind="presentation" identifier="About" id="bDP-vv-SGV"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="71t-jQ-VLu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30N-hc-PhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="470" y="-56"/>
+            <point key="canvasLocation" x="752" y="464"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pqh-Bu-x6o">
+            <objects>
+                <navigationController navigationBarHidden="YES" toolbarHidden="NO" id="oDR-VL-3El" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="769-Fz-2Ng">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ejQ-8i-NR8">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="JGI-a2-PMh" kind="relationship" relationship="rootViewController" id="M42-h1-k1N"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b7Y-kq-4kG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64" y="464"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="LA3-to-lbU">
+            <objects>
+                <tableViewController title="About View Controller" id="RlW-Rx-bq5" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="o5l-Ha-kIo" customClass="CMPInfoTableView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="RlW-Rx-bq5" id="knu-Et-5t9"/>
+                            <outlet property="delegate" destination="RlW-Rx-bq5" id="fBl-QU-I8t"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="About" id="iHs-gE-ZsQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="cf5-c4-t3X">
+                            <connections>
+                                <segue destination="JGI-a2-PMh" kind="custom" customClass="CMPDismissSegue" id="bez-IK-SFg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aaq-GW-VRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752" y="1180"/>
+        </scene>
+        <!--About Navigation Controller-->
+        <scene sceneID="VmE-wO-lbz">
+            <objects>
+                <navigationController title="About Navigation Controller" modalPresentationStyle="formSheet" id="9eF-lL-0bJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pva-iv-8Px">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="RlW-Rx-bq5" kind="relationship" relationship="rootViewController" id="SCU-Ag-umr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s4R-dD-tYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64" y="1180"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bez-IK-SFg"/>
+    </inferredMetricsTieBreakers>
 </document>

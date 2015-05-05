@@ -8,6 +8,7 @@
 //
 
 #import "CMPRootViewController.h"
+#import "CMPInfoTableView.h"
 
 @implementation CMPRootViewController
 
@@ -18,6 +19,16 @@
 	UIStoryboard* sb = [UIStoryboard storyboardWithName: @"Document" bundle: nil];
     self.primaryViewController = [sb instantiateInitialViewController];
     self.secondaryViewController = [sb instantiateInitialViewController];
+}
+
+- (void)prepareForSegue: (UIStoryboardSegue*) segue sender: (id) sender
+{
+    if ([segue.identifier isEqualToString: @"About"]) {
+        UINavigationController* nav = [segue destinationViewController];
+        UITableViewController* cont = [nav.viewControllers objectAtIndex: 0];
+        CMPInfoTableView* info = (CMPInfoTableView*)(cont.tableView);
+        [info loadContentsOfURL: [[NSBundle mainBundle] URLForResource: @"About" withExtension: @"xml"]];
+    }
 }
 
 @end
