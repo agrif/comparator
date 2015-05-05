@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA085140548877DEDD304951 /* Pods_Comparator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD9CEA3A2E446579870B59A /* Pods_Comparator.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		12FA2D4BF9E5EBDF6F67282B /* libPods-Comparator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6761108F32BFF808342E3D11 /* libPods-Comparator.a */; };
 		D023BA3E1AEF2706004B598A /* CMPDismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA3D1AEF2706004B598A /* CMPDismissSegue.m */; };
 		D023BA481AF00287004B598A /* CMPDocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA441AF00287004B598A /* CMPDocumentViewController.m */; };
 		D023BA4A1AF00287004B598A /* CMPRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D023BA471AF00287004B598A /* CMPRootViewController.m */; };
@@ -22,6 +22,17 @@
 		D02CC0FB1AF2FC0300F7A4A6 /* CMPInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D02CC0F81AF2FC0300F7A4A6 /* CMPInfoTableView.m */; };
 		D02CC0FC1AF2FC0300F7A4A6 /* CMPInsetLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D02CC0FA1AF2FC0300F7A4A6 /* CMPInsetLabel.m */; };
 		D02CC0FE1AF2FDB200F7A4A6 /* About.xml in Resources */ = {isa = PBXBuildFile; fileRef = D02CC0FD1AF2FDB200F7A4A6 /* About.xml */; };
+		D071FE531AF86BD8007E4CBA /* Icon.svg in Resources */ = {isa = PBXBuildFile; fileRef = D071FE451AF86BD8007E4CBA /* Icon.svg */; };
+		D071FE641AF86DCD007E4CBA /* Icon-Small7.png in Resources */ = {isa = PBXBuildFile; fileRef = D071FE5A1AF86DCD007E4CBA /* Icon-Small7.png */; };
+		D071FE651AF86DCD007E4CBA /* Icon-Small7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D071FE5B1AF86DCD007E4CBA /* Icon-Small7@2x.png */; };
+		D071FE661AF86DCD007E4CBA /* Icon-Small7@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D071FE5C1AF86DCD007E4CBA /* Icon-Small7@3x.png */; };
+		D071FE671AF86DCD007E4CBA /* Icon7-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = D071FE5D1AF86DCD007E4CBA /* Icon7-iPad.png */; };
+		D071FE681AF86DCD007E4CBA /* Icon7-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D071FE5E1AF86DCD007E4CBA /* Icon7-iPad@2x.png */; };
+		D071FE691AF86DCD007E4CBA /* Icon7-iPad@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D071FE5F1AF86DCD007E4CBA /* Icon7-iPad@3x.png */; };
+		D071FE6A1AF86DCD007E4CBA /* Icon7.png in Resources */ = {isa = PBXBuildFile; fileRef = D071FE601AF86DCD007E4CBA /* Icon7.png */; };
+		D071FE6B1AF86DCD007E4CBA /* Icon7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D071FE611AF86DCD007E4CBA /* Icon7@2x.png */; };
+		D071FE6C1AF86DCD007E4CBA /* Icon7@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D071FE621AF86DCD007E4CBA /* Icon7@3x.png */; };
+		D071FE6D1AF86DCD007E4CBA /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = D071FE631AF86DCD007E4CBA /* iTunesArtwork */; };
 		D07B5DC21AEA97440075B6CC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D07B5DB91AEA97440075B6CC /* Info.plist */; };
 		D07B5DC31AEA97440075B6CC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D07B5DBA1AEA97440075B6CC /* LaunchScreen.xib */; };
 		D07B5DC41AEA97440075B6CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07B5DBB1AEA97440075B6CC /* Main.storyboard */; };
@@ -32,7 +43,7 @@
 
 /* Begin PBXFileReference section */
 		2B17ECEF9DFDE115017C8768 /* Pods-Comparator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comparator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Comparator/Pods-Comparator.debug.xcconfig"; sourceTree = "<group>"; };
-		7FD9CEA3A2E446579870B59A /* Pods_Comparator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comparator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6761108F32BFF808342E3D11 /* libPods-Comparator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Comparator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8097CBE6893614B386D97E37 /* Pods-Comparator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comparator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Comparator/Pods-Comparator.release.xcconfig"; sourceTree = "<group>"; };
 		D023BA3C1AEF2706004B598A /* CMPDismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMPDismissSegue.h; path = Extra/CMPDismissSegue.h; sourceTree = "<group>"; };
 		D023BA3D1AEF2706004B598A /* CMPDismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMPDismissSegue.m; path = Extra/CMPDismissSegue.m; sourceTree = "<group>"; };
@@ -61,6 +72,17 @@
 		D02CC0F91AF2FC0300F7A4A6 /* CMPInsetLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPInsetLabel.h; sourceTree = "<group>"; };
 		D02CC0FA1AF2FC0300F7A4A6 /* CMPInsetLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPInsetLabel.m; sourceTree = "<group>"; };
 		D02CC0FD1AF2FDB200F7A4A6 /* About.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = About.xml; sourceTree = "<group>"; };
+		D071FE451AF86BD8007E4CBA /* Icon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Icon.svg; sourceTree = "<group>"; };
+		D071FE5A1AF86DCD007E4CBA /* Icon-Small7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small7.png"; sourceTree = "<group>"; };
+		D071FE5B1AF86DCD007E4CBA /* Icon-Small7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small7@2x.png"; sourceTree = "<group>"; };
+		D071FE5C1AF86DCD007E4CBA /* Icon-Small7@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small7@3x.png"; sourceTree = "<group>"; };
+		D071FE5D1AF86DCD007E4CBA /* Icon7-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon7-iPad.png"; sourceTree = "<group>"; };
+		D071FE5E1AF86DCD007E4CBA /* Icon7-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon7-iPad@2x.png"; sourceTree = "<group>"; };
+		D071FE5F1AF86DCD007E4CBA /* Icon7-iPad@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon7-iPad@3x.png"; sourceTree = "<group>"; };
+		D071FE601AF86DCD007E4CBA /* Icon7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon7.png; sourceTree = "<group>"; };
+		D071FE611AF86DCD007E4CBA /* Icon7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon7@2x.png"; sourceTree = "<group>"; };
+		D071FE621AF86DCD007E4CBA /* Icon7@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon7@3x.png"; sourceTree = "<group>"; };
+		D071FE631AF86DCD007E4CBA /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		D07B5D8E1AEA95D50075B6CC /* Comparator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comparator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07B5DB91AEA97440075B6CC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D07B5DBA1AEA97440075B6CC /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -76,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA085140548877DEDD304951 /* Pods_Comparator.framework in Frameworks */,
+				12FA2D4BF9E5EBDF6F67282B /* libPods-Comparator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +169,24 @@
 			path = Extra/InfoTableView;
 			sourceTree = "<group>";
 		};
+		D071FE3D1AF86BD8007E4CBA /* Springboard */ = {
+			isa = PBXGroup;
+			children = (
+				D071FE5A1AF86DCD007E4CBA /* Icon-Small7.png */,
+				D071FE5B1AF86DCD007E4CBA /* Icon-Small7@2x.png */,
+				D071FE5C1AF86DCD007E4CBA /* Icon-Small7@3x.png */,
+				D071FE5D1AF86DCD007E4CBA /* Icon7-iPad.png */,
+				D071FE5E1AF86DCD007E4CBA /* Icon7-iPad@2x.png */,
+				D071FE5F1AF86DCD007E4CBA /* Icon7-iPad@3x.png */,
+				D071FE601AF86DCD007E4CBA /* Icon7.png */,
+				D071FE611AF86DCD007E4CBA /* Icon7@2x.png */,
+				D071FE621AF86DCD007E4CBA /* Icon7@3x.png */,
+				D071FE631AF86DCD007E4CBA /* iTunesArtwork */,
+				D071FE451AF86BD8007E4CBA /* Icon.svg */,
+			);
+			path = Springboard;
+			sourceTree = "<group>";
+		};
 		D07B5D851AEA95D50075B6CC = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +210,7 @@
 		D07B5DB81AEA97440075B6CC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D071FE3D1AF86BD8007E4CBA /* Springboard */,
 				D02CC0FD1AF2FDB200F7A4A6 /* About.xml */,
 				D07B5DB91AEA97440075B6CC /* Info.plist */,
 				D07B5DBA1AEA97440075B6CC /* LaunchScreen.xib */,
@@ -195,7 +236,7 @@
 		E9E97A2B7474406075A1BFBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7FD9CEA3A2E446579870B59A /* Pods_Comparator.framework */,
+				6761108F32BFF808342E3D11 /* libPods-Comparator.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -211,7 +252,6 @@
 				D07B5D8A1AEA95D50075B6CC /* Sources */,
 				D07B5D8B1AEA95D50075B6CC /* Frameworks */,
 				D07B5D8C1AEA95D50075B6CC /* Resources */,
-				C2747A398034C696A6FF497B /* Embed Pods Frameworks */,
 				53677B416DF33B609770E818 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -261,12 +301,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D071FE6A1AF86DCD007E4CBA /* Icon7.png in Resources */,
+				D071FE641AF86DCD007E4CBA /* Icon-Small7.png in Resources */,
 				D07B5DC41AEA97440075B6CC /* Main.storyboard in Resources */,
+				D071FE661AF86DCD007E4CBA /* Icon-Small7@3x.png in Resources */,
 				D07B5DCC1AEE83920075B6CC /* Document.storyboard in Resources */,
+				D071FE651AF86DCD007E4CBA /* Icon-Small7@2x.png in Resources */,
+				D071FE691AF86DCD007E4CBA /* Icon7-iPad@3x.png in Resources */,
 				D07B5DC31AEA97440075B6CC /* LaunchScreen.xib in Resources */,
+				D071FE671AF86DCD007E4CBA /* Icon7-iPad.png in Resources */,
 				D02CC0FE1AF2FDB200F7A4A6 /* About.xml in Resources */,
+				D071FE6C1AF86DCD007E4CBA /* Icon7@3x.png in Resources */,
 				D02CC0F51AF2FB0000F7A4A6 /* COPYING in Resources */,
+				D071FE6B1AF86DCD007E4CBA /* Icon7@2x.png in Resources */,
+				D071FE681AF86DCD007E4CBA /* Icon7-iPad@2x.png in Resources */,
 				D07B5DC21AEA97440075B6CC /* Info.plist in Resources */,
+				D071FE531AF86BD8007E4CBA /* Icon.svg in Resources */,
+				D071FE6D1AF86DCD007E4CBA /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,21 +352,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C2747A398034C696A6FF497B /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Comparator/Pods-Comparator-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
