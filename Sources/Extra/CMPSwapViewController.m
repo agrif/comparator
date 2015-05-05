@@ -78,6 +78,15 @@
     return [self shouldShowSecondaryForSize: self.view.frame.size];
 }
 
+- (void) swap: (BOOL) animated
+{
+    // FIXME animated swap
+    UIViewController* vc = _primary;
+    _primary = _secondary;
+    _secondary = vc;
+    [self layoutSubviews];
+}
+
 #pragma mark -
 #pragma mark rotation and animation calls
 

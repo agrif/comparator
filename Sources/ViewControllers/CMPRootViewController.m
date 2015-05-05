@@ -12,6 +12,11 @@
 
 @implementation CMPRootViewController
 
+- (IBAction) swapButton: (id) sender
+{
+    [self swap: YES];
+}
+
 - (void) viewDidLoad
 {
 	[super viewDidLoad];

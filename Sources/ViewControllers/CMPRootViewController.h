@@ -11,5 +11,7 @@
 
 @interface CMPRootViewController : CMPSwapViewController
 
+- (IBAction) swapButton: (id) sender;
+
 @end
 

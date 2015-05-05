@@ -17,4 +17,6 @@
 @property (nonatomic, retain) IBOutlet UIViewController* secondaryViewController;
 @property (nonatomic, readonly, getter=isShowingSecondary) BOOL showingSecondary;
 
+- (void) swap: (BOOL) animated;
+
 @end

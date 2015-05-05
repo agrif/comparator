@@ -24,8 +24,15 @@
                                 <segue destination="9eF-lL-0bJ" kind="presentation" identifier="About" id="bDP-vv-SGV"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Fff-gY-p0Z"/>
+                        <barButtonItem title="Swap" id="ZNa-LW-j9r">
+                            <connections>
+                                <action selector="swapButton:" destination="JGI-a2-PMh" id="bqD-s7-YBl"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="71t-jQ-VLu"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30N-hc-PhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
