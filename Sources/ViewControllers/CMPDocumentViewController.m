@@ -66,6 +66,7 @@
     hud.taskInProgress = YES;
     hud.progress = 0.0f;
     [hud show: YES];
+    self.navigationItem.title = @"";
     
     file = newFile;
     [file readDataWithProgress: ^(NSUInteger x, NSUInteger max)
@@ -86,8 +87,10 @@
                 if ([file.name hasSuffix: @".pdf"])
                     mime = @"application/pdf"; // FIXME better mime types
                 [webView loadData: dat MIMEType: mime textEncodingName: nil baseURL: nil];
+                
                 hud.taskInProgress = NO;
                 [hud hide: YES];
+                self.navigationItem.title = file.name;
             }
         } else {
             NSLog(@"error opening file: %@\n", err);

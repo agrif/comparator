@@ -21,7 +21,7 @@
             </objects>
             <point key="canvasLocation" x="-546" y="422"/>
         </scene>
-        <!--Document-->
+        <!--Document View Controller-->
         <scene sceneID="l8a-17-JB4">
             <objects>
                 <viewController id="ygZ-Mk-HTV" customClass="CMPDocumentViewController" sceneMemberID="viewController">
@@ -44,7 +44,7 @@
                             <constraint firstItem="y7u-0u-IdM" firstAttribute="width" secondItem="2sn-kM-EUx" secondAttribute="width" id="zd7-qy-NRt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Document" id="i1W-pN-JdZ">
+                    <navigationItem key="navigationItem" id="i1W-pN-JdZ">
                         <barButtonItem key="leftBarButtonItem" title="Open" id="77m-eE-c1E">
                             <connections>
                                 <segue destination="rWm-YO-4mm" kind="presentation" identifier="Open" id="WVl-yl-OtN"/>
